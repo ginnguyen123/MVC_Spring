@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>temp file</title>
+    <th:block th:replace="layout/head"></th:block>
+</head>
+
+<body class="fixed-left">
+<!-- Begin page -->
+<div id="wrapper">
+    <!-- Top Bar Start -->
+    <th:block th:replace="layout/top-bar.html"></th:block>
+    <!-- Top Bar End -->
+    <!-- ========== Left Sidebar Start ========== -->
+    <th:block th:replace="layout/left-sidebar.html"></th:block>
+    <!-- Left Sidebar End -->
+    <!-- Start right Content here -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+
+            <div class="">
+                <div class="page-header-title">
+                </div>
+            </div>
+
+            <div class="page-content-wrapper ">
+
+                <div class="container-fluid">
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="m-b-30 m-t-0">Recent Contacts</h4>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover m-b-0">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Full name</th>
+                                                        <th>Email</th>
+                                                        <th>Phone</th>
+                                                        <th>Address</th>
+                                                        <th>Balance</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <th:block th:each="item : ${customers}">
+                                                        <tr>
+                                                            <td th:text="${item.getId()}"></td>
+                                                            <td th:text="${item.getId()}"></td>
+                                                            <td th:text="${item.getId()}"></td>
+                                                            <td th:text="${item.getId()}"></td>
+                                                            <td th:text="${item.getId()}"></td>
+                                                            <td th:text="${item.getId()}"></td>
+                                                        </tr>
+                                                    </th:block>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                    <!-- end row -->
+
+                </div><!-- container-fluid -->
+
+
+            </div> <!-- Page content Wrapper -->
+
+        </div> <!-- content -->
+
+        <th:block th:replace="layout/footer.html"></th:block>
+
+    </div>
+    <!-- End Right content here -->
+</div>
+<!-- END wrapper -->
+</div>
+<th:block th:replace="layout/script.html"></th:block>
+</body>
+
+</html>

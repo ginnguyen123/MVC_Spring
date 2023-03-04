@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>temp file</title>
+  <th:block th:replace="layout/head"></th:block>
+</head>
+
+<body class="fixed-left">
+<!-- Begin page -->
+<div id="wrapper">
+  <!-- Top Bar Start -->
+  <th:block th:replace="layout/top-bar.html"></th:block>
+  <!-- Top Bar End -->
+  <!-- ========== Left Sidebar Start ========== -->
+  <th:block th:replace="layout/left-sidebar.html"></th:block>
+  <!-- Left Sidebar End -->
+  <!-- Start right Content here -->
+  <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+      <div class="">
+        <div class="page-header-title">
+        </div>
+      </div>
+
+      <div class="page-content-wrapper ">
+
+        <div class="container-fluid">
+
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row" >
+                    <div class="col-6">
+                      <h4 class="m-t-0 m-b-30">Create customer</h4>
+                    </div>
+                    <div class="col-xl-6" style="display: flex; justify-content: flex-end; width: 20px">
+                      <button class="btn btn-primary btn-sm" style="margin-bottom: 15px;">
+                        <a href="/customers" ><i class="fas fa-align-justify"></i> Customer list</a>
+                      </button>
+                    </div>
+                  </div>
+
+                  <form method="post" th:object="${customer}">
+                    <div class="row">
+                      <div class="form-group col-lg-6">
+                        <label >Full name</label>
+                        <input type="text" class="form-control" th:field="*{fullName}" placeholder="Enter full name">
+                      </div>
+
+                      <div class="col-lg-6">
+                        <label >Email</label>
+                        <input type="text" class="form-control" th:field="*{email}" placeholder="Enter email">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-lg-6">
+                        <label>Phone numbers</label>
+                        <input type="tel" class="form-control" th:field="*{phone}" placeholder="Enter phone numbers">
+                      </div>
+
+                      <div class="col-lg-6">
+                        <label>Address</label>
+                        <input type="text" class="form-control" th:field="*{address}" placeholder="Enter your address">
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-success waves-effect waves-light"><i class="mdi mdi-account-plus"></i> Add</button>
+                    <a href="/customers">
+                      <button type="reset" class="btn btn-outline-light waves-effect waves-light">Cancel</button>
+                    </a>
+
+                  </form>
+                </div><!-- card-body -->
+              </div> <!-- card -->
+            </div>
+            <!-- end col -->
+
+          </div>
+          <!-- end row -->
+
+        </div><!-- container-fluid -->
+
+
+      </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+    <th:block th:replace="layout/footer.html"></th:block>
+
+  </div>
+  <!-- End Right content here -->
+</div>
+<!-- END wrapper -->
+</div>
+<th:block th:replace="layout/script.html"></th:block>
+</body>
+
+</html>
